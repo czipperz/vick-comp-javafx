@@ -3,6 +3,7 @@ LDFLAGS=-lboost_regex
 O=out
 S=src
 CXX=clang++
+B=test
 
 files=$O/vick-comp-javafx.o   \
 
