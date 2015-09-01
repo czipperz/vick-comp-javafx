@@ -1,4 +1,5 @@
-CFLAGS=-std=c++11 -lboost_regex
+CFLAGS=-std=c++11
+LDFLAGS=-lboost_regex
 O=out
 S=src
 CXX=clang++
@@ -6,7 +7,7 @@ CXX=clang++
 files=$O/vick-comp-javafx.o   \
 
 all: ${files}
-	${CXX} -o test $^ ${CFLAGS}
+	${CXX} -o $B $^ ${CFLAGS} ${LDFLAGS}
 
 $O/%.o: $S/%.cc $S/%.hh
 	@mkdir -p $O
