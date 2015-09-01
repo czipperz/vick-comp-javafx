@@ -17,3 +17,10 @@ $O/%.o: $S/%.cc $S/%.hh
 $O/%.o: $S/%.cc
 	@mkdir -p $O
 	${CXX} -o $@ -c $< ${CFLAGS}
+
+clean:
+	rm -R $O
+	rm $B
+
+tags:
+	etags `find $S -name '*.cc'`
