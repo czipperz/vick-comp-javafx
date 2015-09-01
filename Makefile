@@ -1,7 +1,7 @@
 CFLAGS=-std=c++11 -lboost_regex
 O=out
 S=src
-CXX=g++
+CXX=clang++
 
 files=$O/vick-comp-javafx.o   \
 
