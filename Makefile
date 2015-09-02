@@ -5,6 +5,7 @@ S=src
 CXX=clang++
 
 files=$O/vick-comp-javafx.o   \
+      $O/regex.o              \
 
 all: ${files}
 
