@@ -17,29 +17,29 @@ std::vector<std::string> get_lines(const char*const path) {
     return lines;
 }
 
-int main() {
-    std::string line;
-    std::vector<std::string> lines =
-        get_lines("api/javafx/application/Preloader.ErrorNotification.html"
-                  // "api/javafx/application/HostServices.html"
-                  );
-    std::vector<method> methods;
-    for(auto it = lines.begin(); it < lines.end(); it++) {
-        if(boost::regex_match(*it,constructor_start)) {
-            it++;
-            for(; it < lines.end() && !boost::regex_match(*it,end); it++) {
-                constructor_p(lines,it,methods);
-            }
-        }
-        if(boost::regex_match(*it,method_start)) {
-            it++;
-            for(; it < lines.end() && !boost::regex_match(*it,end); it++) {
-                methods_p(lines,it,methods);
-            }
-        }
-    }
-    return 0;
-}
+// int main() {
+//     std::string line;
+//     std::vector<std::string> lines =
+//         get_lines("api/javafx/application/Preloader.ErrorNotification.html"
+//                   // "api/javafx/application/HostServices.html"
+//                   );
+//     std::vector<method> methods;
+//     for(auto it = lines.begin(); it < lines.end(); it++) {
+//         if(boost::regex_match(*it,constructor_start)) {
+//             it++;
+//             for(; it < lines.end() && !boost::regex_match(*it,end); it++) {
+//                 constructor_p(lines,it,methods);
+//             }
+//         }
+//         if(boost::regex_match(*it,method_start)) {
+//             it++;
+//             for(; it < lines.end() && !boost::regex_match(*it,end); it++) {
+//                 methods_p(lines,it,methods);
+//             }
+//         }
+//     }
+//     return 0;
+// }
 
 std::string method::to_str() {
     std::string par(return_type + " " + name + "(");
